@@ -8,7 +8,7 @@ I'm testing out a lot of home automation stuff at the moment and prototype some 
 * Setting a hostname (name of the pi in /etc/hosts and /etc/hostname)
 * Setting a static ip (via dhcpcd.conf)
 * Creating a ssh key (for example for github)
-* Installing [my dotfiles](https://github.com/fbrinker/dotfiles) (you can use them too :)
+* Installing [my very basic dotfiles](https://github.com/fbrinker/dotfiles) (you can use them too :)
 * Installing an authorized ssh key for easier logins (leave empty if not needed)
 * Sums up all made changes
 Afterwards you have to reboot manually.
