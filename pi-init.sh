@@ -75,5 +75,5 @@ sudo echo "
 #
 interface eth0
     static ip_address=$PI_IP/24
-    static routers=${IPARR[0]}.${IPARR[1]}.${IPARR[2]}.1
-    static domain_name_servers=${IPARR[0]}.${IPARR[1]}.${IPARR[2]}.1" >> /etc/dhcpcd.conf
+    static routers=${PI_IP_ARRAY[0]}.${PI_IP_ARRAY[1]}.${PI_IP_ARRAY[2]}.1
+    static domain_name_servers=${PI_IP_ARRAY[0]}.${PI_IP_ARRAY[1]}.${PI_IP_ARRAY[2]}.1" >> /etc/dhcpcd.conf
