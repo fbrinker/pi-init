@@ -1,5 +1,5 @@
 # pi-init
-This is my init script for [debian based rapsberrypi images](https://www.raspberrypi.org/downloads) (I prefer the raspbian LITE one without any desktop).
+This is my init script for [debian based rapsberrypi images](https://www.raspberrypi.org/downloads) (I prefer the raspbian LITE one without any desktop). But you should be able to use it with any debian jessie+ machine.
 
 ![preview](http://i.imgur.com/MiPD6SA.png)
 
