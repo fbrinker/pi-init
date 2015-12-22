@@ -54,8 +54,8 @@ git clone git@github.com:fbrinker/dotfiles.git
 #
 # Change hostname
 #
-cp /etc/hostname /etc/hostname.bak
-cp /etc/hosts /etc/hosts.bak
+sudo cp /etc/hostname /etc/hostname.bak
+sudo cp /etc/hosts /etc/hosts.bak
 
 sudo sed -i -e 's/raspberrypi/$PI_NAME/g' /etc/hostname
 sudo sed -i -e 's/raspberrypi/$PI_NAME/g' /etc/hosts
@@ -64,12 +64,12 @@ sudo /etc/init.d/hostname.sh
 #
 # Update ip config
 #
-cp /etc/dhcpcd.conf /etc/dhcpcd.conf.bak
+sudo cp /etc/dhcpcd.conf /etc/dhcpcd.conf.bak
 
 declare -a PI_IP_ARRAY
 PI_IP_ARRAY=(`echo ${PI_IP//./ }`)
 
-echo "
+sudo echo "
 #
 # static config
 #
