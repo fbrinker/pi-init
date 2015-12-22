@@ -91,7 +91,7 @@ sudo cp /etc/dhcpcd.conf /etc/dhcpcd.conf.bak
 declare -a PI_IP_ARRAY
 PI_IP_ARRAY=(`echo ${PI_IP//./ }`)
 
-sudo echo "
+echo "
 #
 # static config
 #
