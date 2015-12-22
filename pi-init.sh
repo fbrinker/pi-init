@@ -4,17 +4,16 @@ BASEIP="192.168.178."
 
 # Input
 read -e -p "The Name of the PI: " -i "pi@" PI_NAME
-echo "Hello. From now on, my name is pi@$PI_NAME"
-echo ""
-echo ""
+echo "# Hello. From now on, my name is $PI_NAME"
 read -e -p "My IP: " -i "$BASEIP" PI_IP
-echo "Okay. My IP will be $PI_IP"
-echo ""
+echo "# Okay. My IP will be $PI_IP"
 read -e -p "Ready to start the installation? " -i "y" PI_START
 
 if [[ $PI_START != "y" ]]; then
     exit
 fi
+
+echo "# Here we go... :)"
 
 # Run
 ### Updates
