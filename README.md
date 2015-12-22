@@ -11,6 +11,7 @@ I'm testing out a lot of home automation stuff at the moment and prototype some 
 * Installing [my very basic dotfiles](https://github.com/fbrinker/dotfiles) (you can use them too :)
 * Installing an authorized ssh key for easier logins (leave empty if not needed)
 * Sums up all made changes
+
 Afterwards you have to reboot manually.
 
 # Usage
