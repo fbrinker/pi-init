@@ -22,5 +22,5 @@ chmod +x ~/pi-init.sh
 ```
 
 # Troubleshooting
-#### I can't connect to new rebooted pi
+#### I can't connect to the rebooted pi
 * Sometimes, after changing the hostname and setting the ip address, I have problems connecting (or even pinging) to the "new" raspberrypi... I have to delete the device from my AVM Fritzbox routers dhcp configuration, restart the pi and the network (router) will recognise the pi correctly.
