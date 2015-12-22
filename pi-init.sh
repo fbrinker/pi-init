@@ -57,8 +57,8 @@ git clone git@github.com:fbrinker/dotfiles.git
 sudo cp /etc/hostname /etc/hostname.bak
 sudo cp /etc/hosts /etc/hosts.bak
 
-sudo sed -i -e 's/raspberrypi/$PI_NAME/g' /etc/hostname
-sudo sed -i -e 's/raspberrypi/$PI_NAME/g' /etc/hosts
+sudo sed -i -e "s/raspberrypi/$PI_NAME/g" /etc/hostname
+sudo sed -i -e "s/raspberrypi/$PI_NAME/g" /etc/hosts
 sudo /etc/init.d/hostname.sh
 
 #
