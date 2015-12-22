@@ -38,6 +38,7 @@ ssh-keygen -t rsa -b 4096 -C "pi@$PI_NAME"
 
 echo "#"
 echo "# Now, please add the following key to your Github profile, otherwise we can't continue... :)"
+echo "# Press [ENTER] when you're done.
 echo "#"
 cat .ssh/id_rsa.pub
 read PI_TMP
