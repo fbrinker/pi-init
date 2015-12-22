@@ -39,7 +39,7 @@ cd ~
 ssh-keygen -t rsa -b 4096 -C "pi@$PI_NAME"
 
 echo "#"
-echo "# Now, please add the following key to your Github profile, otherwise we can't continue... :)"
+echo "# You can add the following key to your Github profile... :)"
 echo "# https://github.com/settings/ssh"
 echo "# ----------"
 cat .ssh/id_rsa.pub
