@@ -10,7 +10,7 @@ read -e -p "# The Name of the PI: " -i "" PI_NAME
 echo "#"
 echo "# Hello. From now on, my name is '$PI_NAME'"
 echo "#"
-read -e -p "My IP: " -i "$BASEIP" PI_IP
+read -e -p "# My IP: " -i "$BASEIP" PI_IP
 echo "#"
 echo "# Okay. My IP will be '$PI_IP'"
 echo "#"
@@ -27,14 +27,14 @@ echo "#"
 #
 # Updates
 #
-sudo apt-get update && sudo apt-get upgrade --yes
-sudo apt-get install vim git
+#sudo apt-get update && sudo apt-get upgrade --yes
+#sudo apt-get install vim git
 
 #
 # Generate Key
 #
 cd ~
-ssh-keygen -t rsa -b 4096 -C "pi@$PI_NAME"
+#ssh-keygen -t rsa -b 4096 -C "pi@$PI_NAME"
 
 echo "#"
 echo "# Now, please add the following key to your Github profile, otherwise we can't continue... :)"
