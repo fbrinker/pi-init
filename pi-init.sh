@@ -17,7 +17,7 @@ echo "# Here we go... :)"
 
 # Run
 ### Updates
-sudo apt-get update && apt-get upgrade --yes
+sudo apt-get update && sudo apt-get upgrade --yes
 sudo apt-get install vim git
 
 ### Generate Key
