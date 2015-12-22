@@ -1,5 +1,5 @@
 # pi-init
-This is my init script for [debian based rapsberrypi images](https://www.raspberrypi.org/downloads).
+This is my init script for [debian based rapsberrypi images](https://www.raspberrypi.org/downloads) (I prefer the raspbian LITE one without any desktop).
 
 ![preview](http://i.imgur.com/MiPD6SA.png)
 
@@ -20,3 +20,6 @@ curl -LSso ~/pi-init.sh https://raw.githubusercontent.com/fbrinker/pi-init/maste
 chmod +x ~/pi-init.sh
 ./pi-init.sh
 ```
+
+# Troubleshooting
+Sometimes, after changing the hostname and setting the ip address, if have problems connecting to the "new" raspberrypi. Then i have to delete the device from my AVM Fritzbox router, restart it and the network (router) recognises it correctly.
