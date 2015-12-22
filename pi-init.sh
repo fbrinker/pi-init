@@ -110,19 +110,25 @@ echo "# /etc/hostname:"
 echo "# ----------"
 sudo cat /etc/hostname
 echo "# ----------"
-echo "#"
+echo "# To continue, press [ENTER]"
 read PI_TMP
 echo "# /etc/hosts:"
 echo "# ----------"
 sudo cat /etc/hosts
 echo "# ----------"
-echo "#"
+echo "# To continue, press [ENTER]"
 read PI_TMP
 echo "# /etc/dhcpcd.conf:"
 echo "# ----------"
-sudo cat /etc/dhcpcd.con
+sudo cat /etc/dhcpcd.conf
 echo "# ----------"
-echo "#"
+echo "# To continue, press [ENTER]"
+read PI_TMP
+echo "# ~/.ssh/authorized_keys:"
+echo "# ----------"
+sudo cat ~/.ssh/authorized_keys
+echo "# ----------"
+echo "# To continue, press [ENTER]"
 read PI_TMP
 
 echo "#"
