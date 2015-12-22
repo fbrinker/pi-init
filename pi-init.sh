@@ -3,7 +3,7 @@
 BASEIP="192.168.178."
 
 # Input
-read -e -p "The Name of the PI: " -i "pi@" PI_NAME
+read -e -p "The Name of the PI: " -i "" PI_NAME
 echo "# Hello. From now on, my name is $PI_NAME"
 read -e -p "My IP: " -i "$BASEIP" PI_IP
 echo "# Okay. My IP will be $PI_IP"
@@ -17,12 +17,12 @@ echo "# Here we go... :)"
 
 # Run
 ### Updates
-sudo apt-get update && apt-get upgrade --yes
+sudo apt-get update && sudo apt-get upgrade --yes
 sudo apt-get install vim git
 
 ### Generate Key
 cd ~
-ssh-keygen -t rsa -b 4096 -C $PI_NAME
+ssh-keygen -t rsa -b 4096 -C "pi@$PI_NAME"
 
 echo "Now, please add the following key to your Github profile, otherwise we can't continue... :)"
 cat .ssh/id_rsa.pub
