@@ -1,6 +1,9 @@
 # pi-init
 This is my init script for [debian based rapsberrypi images](https://www.raspberrypi.org/downloads).
 
+![preview](http://i.imgur.com/MiPD6SA.png)
+
+# Features
 I'm testing out a lot of home automation stuff at the moment and prototype some ideas. So i have to install different debian based sd card images from time to time. This script does all the first magic.
 * Setting a hostname (name of the pi)
 * Setting a static ip
