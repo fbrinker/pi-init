@@ -21,6 +21,7 @@ curl -LSso ~/pi-init.sh https://raw.githubusercontent.com/fbrinker/pi-init/maste
 chmod +x ~/pi-init.sh
 ./pi-init.sh
 ```
+And then reboot the machine and you're done.
 
 # Troubleshooting
 ##### I can't connect to the rebooted pi
