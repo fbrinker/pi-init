@@ -5,17 +5,24 @@ BASEIP="192.168.178."
 #
 # Input
 #
-read -e -p "The Name of the PI: " -i "" PI_NAME
+echo "#"
+read -e -p "# The Name of the PI: " -i "" PI_NAME
+echo "#"
 echo "# Hello. From now on, my name is '$PI_NAME'"
+echo "#"
 read -e -p "My IP: " -i "$BASEIP" PI_IP
+echo "#"
 echo "# Okay. My IP will be '$PI_IP'"
-read -e -p "Ready to start the installation? " -i "y" PI_START
+echo "#"
+read -e -p "# Ready to start the installation? " -i "y" PI_START
 
 if [[ $PI_START != "y" ]]; then
     exit
 fi
 
+echo "#"
 echo "# Here we go... :)"
+echo "#"
 
 #
 # Updates
@@ -29,7 +36,9 @@ sudo apt-get install vim git
 cd ~
 ssh-keygen -t rsa -b 4096 -C "pi@$PI_NAME"
 
-echo "Now, please add the following key to your Github profile, otherwise we can't continue... :)"
+echo "#"
+echo "# Now, please add the following key to your Github profile, otherwise we can't continue... :)"
+echo "#"
 cat .ssh/id_rsa.pub
 read PI_TMP
 
