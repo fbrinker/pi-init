@@ -20,21 +20,23 @@ if [[ $PI_START != "y" ]]; then
     exit
 fi
 
-echo "#"
-echo "# Here we go... :)"
-echo "#"
-
 #
 # Updates
 #
-#sudo apt-get update && sudo apt-get upgrade --yes
-#sudo apt-get install vim git
+echo "#"
+echo "# Here we go... Installing updates and basic software packages... :)"
+echo "#"
+sudo apt-get update && sudo apt-get upgrade --yes
+sudo apt-get install vim git
 
 #
 # Generate Key
 #
+echo "#"
+echo "# Creating ssh key..."
+echo "#"
 cd ~
-#ssh-keygen -t rsa -b 4096 -C "pi@$PI_NAME"
+ssh-keygen -t rsa -b 4096 -C "pi@$PI_NAME"
 
 echo "#"
 echo "# Now, please add the following key to your Github profile, otherwise we can't continue... :)"
@@ -47,14 +49,30 @@ echo "#"
 read PI_TMP
 
 #
+# Insert Key Auth
+#
+echo "#"
+echo "# Adding an AUTH key..."
+echo "#"
+read -e -p "# You may want to add a ssh key to the authorized hosts now: " -i "" PI_AUTHKEY
+touch ~/.ssh/authorized_keys
+echo $PI_AUTHKEY >> ~/.ssh/authorized_keys
+
+#
 # Checkout && install my dotfiles
 #
+echo "#"
+echo "# Checking out the dotfiles..."
+echo "#"
 git clone git@github.com:fbrinker/dotfiles.git
 ~/dotfiles/install
 
 #
 # Change hostname
 #
+echo "#"
+echo "# Changing the hostname..."
+echo "#"
 sudo cp /etc/hostname /etc/hostname.bak
 sudo cp /etc/hosts /etc/hosts.bak
 
@@ -65,6 +83,9 @@ sudo /etc/init.d/hostname.sh
 #
 # Update ip config
 #
+echo "#"
+echo "# Changing the ip..."
+echo "#"
 sudo cp /etc/dhcpcd.conf /etc/dhcpcd.conf.bak
 
 declare -a PI_IP_ARRAY
@@ -83,6 +104,7 @@ interface eth0
 # Done
 #
 echo "#"
+echo "# Wow, we are done now."
 echo "# You may want to check the following files for a correct configuration:"
 echo "# /etc/hostname:"
 echo "# ----------"
