@@ -46,7 +46,7 @@ read PI_TMP
 #
 # Checkout && install my dotfiles
 #
-git clone https://github.com/fbrinker/dotfiles.git
+git clone git@github.com:fbrinker/dotfiles.git
 ~/dotfiles/install
 
 #
