@@ -10,7 +10,7 @@ read -e -p "# The Name of the PI: " -i "" PI_NAME
 echo "#"
 echo "# Hello. From now on, my name is '$PI_NAME'"
 echo "#"
-read -e -p "# My IP: " -i "$BASEIP" PI_IP
+read -e -p "# My IP (ethernet): " -i "$BASEIP" PI_IP
 echo "#"
 echo "# Okay. My IP will be '$PI_IP'"
 echo "#"
@@ -84,7 +84,7 @@ sudo /etc/init.d/hostname.sh
 # Update ip config
 #
 echo "#"
-echo "# Changing the ip..."
+echo "# Changing the ethernet (eth0) ip..."
 echo "#"
 sudo cp /etc/dhcpcd.conf /etc/dhcpcd.conf.bak
 
@@ -93,12 +93,33 @@ PI_IP_ARRAY=(`echo ${PI_IP//./ }`)
 
 echo "
 #
-# static config
+# static eth0 config
 #
 interface eth0
     static ip_address=$PI_IP/24
     static routers=${PI_IP_ARRAY[0]}.${PI_IP_ARRAY[1]}.${PI_IP_ARRAY[2]}.1
     static domain_name_servers=${PI_IP_ARRAY[0]}.${PI_IP_ARRAY[1]}.${PI_IP_ARRAY[2]}.1" >> /etc/dhcpcd.conf
+    
+read -e -p "# Do you want to add a static ip address for wlan0? " -i "y" PI_ADD_WIFI
+
+if [[ PI_ADD_WIFI == "y" ]]; then
+    echo "#"
+    echo "# Changing the wifi (wlan0) ip..."
+    echo "#"
+    read -e -p "# My wifi IP: " -i "$BASEIP" PI_IP_WIFI
+    
+    declare -a PI_IP_ARRAY_WIFI
+    PI_IP_ARRAY_WIFI=(`echo ${PI_IP_WIFI//./ }`)
+    
+    echo "
+    #
+    # static wlan0 config
+    #
+    interface eth0
+        static ip_address=$PI_IP/24
+        static routers=${PI_IP_ARRAY_WIFI[0]}.${PI_IP_ARRAY_WIFI[1]}.${PI_IP_ARRAY_WIFI[2]}.1
+        static domain_name_servers=${PI_IP_ARRAY_WIFI[0]}.${PI_IP_ARRAY_WIFI[1]}.${PI_IP_ARRAY_WIFI[2]}.1" >> /etc/dhcpcd.conf
+fi
 
 #
 # Done
