@@ -27,7 +27,7 @@ echo "#"
 echo "# Here we go... Installing updates and basic software packages... :)"
 echo "#"
 sudo apt-get update && sudo apt-get upgrade --yes
-sudo apt-get install vim git
+sudo apt-get -y install vim git
 
 #
 # Generate Key
