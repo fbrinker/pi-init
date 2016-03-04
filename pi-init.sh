@@ -64,7 +64,7 @@ echo $PI_AUTHKEY >> ~/.ssh/authorized_keys
 echo "#"
 echo "# Checking out the dotfiles..."
 echo "#"
-git clone git@github.com:fbrinker/dotfiles.git
+git clone https://github.com/fbrinker/dotfiles.git
 ~/dotfiles/install
 
 #
