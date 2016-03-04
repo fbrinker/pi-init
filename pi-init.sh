@@ -112,14 +112,14 @@ if [[ $PI_ADD_WIFI =~ [yY](es)* ]]; then
     declare -a PI_IP_ARRAY_WIFI
     PI_IP_ARRAY_WIFI=(`echo ${PI_IP_WIFI//./ }`)
     
-    echo "
-    #
-    # static wlan0 config
-    #
-    interface eth0
-        static ip_address=$PI_IP/24
-        static routers=${PI_IP_ARRAY_WIFI[0]}.${PI_IP_ARRAY_WIFI[1]}.${PI_IP_ARRAY_WIFI[2]}.1
-        static domain_name_servers=${PI_IP_ARRAY_WIFI[0]}.${PI_IP_ARRAY_WIFI[1]}.${PI_IP_ARRAY_WIFI[2]}.1" >> /etc/dhcpcd.conf
+echo "
+#
+# static wlan0 config
+#
+interface wlan0
+    static ip_address=$PI_IP_WIFI/24
+    static routers=${PI_IP_ARRAY_WIFI[0]}.${PI_IP_ARRAY_WIFI[1]}.${PI_IP_ARRAY_WIFI[2]}.1
+    static domain_name_servers=${PI_IP_ARRAY_WIFI[0]}.${PI_IP_ARRAY_WIFI[1]}.${PI_IP_ARRAY_WIFI[2]}.1" >> /etc/dhcpcd.conf
 fi
 
 #
