@@ -16,7 +16,7 @@ echo "# Okay. My IP will be '$PI_IP'"
 echo "#"
 read -e -p "# Ready to start the installation? " -i "y" PI_START
 
-if [[ $PI_START != "y" ]]; then
+if [[ $PI_START =~ [nN](o)* ]]; then
     exit
 fi
 
@@ -102,11 +102,12 @@ interface eth0
     
 read -e -p "# Do you want to add a static ip address for wlan0? " -i "y" PI_ADD_WIFI
 
-if [[ PI_ADD_WIFI == "y" ]]; then
+if [[ $PI_ADD_WIFI =~ [yY](es)* ]]; then
+    read -e -p "# My wifi IP: " -i "$BASEIP" PI_IP_WIFI
+    
     echo "#"
     echo "# Changing the wifi (wlan0) ip..."
     echo "#"
-    read -e -p "# My wifi IP: " -i "$BASEIP" PI_IP_WIFI
     
     declare -a PI_IP_ARRAY_WIFI
     PI_IP_ARRAY_WIFI=(`echo ${PI_IP_WIFI//./ }`)
