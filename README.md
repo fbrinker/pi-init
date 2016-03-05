@@ -27,3 +27,6 @@ And then reboot the machine and you're done.
 # Troubleshooting
 ##### I can't connect to the rebooted pi
 * Sometimes, after changing the hostname and setting the ip address, I have problems connecting (or even pinging) to the "new" raspberrypi... I have to delete the device from my AVM Fritzbox routers dhcp configuration, restart the pi and the network (router) will recognise the pi correctly.
+
+##### I can't connect to the rebooted pi via wifi
+* You may have entered incorrect wifi settings (SSID & password). You can check/edit them with the following command: ```sudo vim /etc/wpa_supplicant/wpa_supplicant.conf```
