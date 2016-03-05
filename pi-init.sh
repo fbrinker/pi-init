@@ -110,7 +110,7 @@ if [[ $PI_ADD_WIFI =~ [yY](es)* ]]; then
     echo "# Configuring wifi network settings..."
     echo "#"
     
-echo "
+sudo echo "
 network={
     ssid="$WIFI_SSID"
     psk="$WIFI_PASSWORD"
