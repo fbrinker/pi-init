@@ -112,8 +112,8 @@ if [[ $PI_ADD_WIFI =~ [yY](es)* ]]; then
     
 echo "
 network={
-    ssid="$WIFI_SSID"
-    psk="$WIFI_PASSWORD"
+    ssid=\"$WIFI_SSID\"
+    psk=\"$WIFI_PASSWORD\"
 }" | sudo tee -a file /etc/wpa_supplicant/wpa_supplicant.conf
     
     read -e -p "# My wifi IP: " -i "$BASEIP" PI_IP_WIFI
